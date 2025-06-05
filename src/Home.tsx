@@ -7,7 +7,7 @@ import cbLogo from './assets/CB-stacked-logo-full-color.svg'
 export const Home = () => {
   const featureFlags = useFeatureFlags()
 
-  const showMessage = useFeatureFlag(namespaceFlags.default.showMessage)
+  const showMessage = true
 
   if (featureFlags.loading) {
     return (
@@ -20,16 +20,14 @@ export const Home = () => {
     <>
       <h1>CloudBees feature management React sample application</h1>
       <div className="card">
-        {showMessage && (
-          <p
-            style={{
-              color: featureFlags.default.fontColor.getValue(),
-              fontSize: featureFlags.default.fontSize.getValue(),
-            }}
-          >
-            {featureFlags.default.message.getValue()}
-          </p>
-        )}
+        {<p
+          style={{
+            color: featureFlags.default.fontColor.getValue(),
+            fontSize: featureFlags.default.fontSize.getValue(),
+          }}
+        >
+          {featureFlags.default.message.getValue()}
+        </p>}
       </div>
 
       <div className="card">
