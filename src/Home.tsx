@@ -20,7 +20,7 @@ export const Home = () => {
     <>
       <h1>CloudBees feature management React sample application</h1>
       <div className="card">
-        {showMessage && (
+        (
           <p
             style={{
               color: featureFlags.default.fontColor.getValue(),
@@ -29,7 +29,7 @@ export const Home = () => {
           >
             {featureFlags.default.message.getValue()}
           </p>
-        )}
+        )
       </div>
 
       <div className="card">
